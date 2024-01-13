@@ -144,6 +144,8 @@ public class TicTacToe
     }
 
     //checks each possible winning condition and if any of them are true, return true.
+    //each checkWin condition function checks if ' ' exist, if it does, it returns false. this
+    //prevents empty spaces from 'winning' the game.
     boolean checkWin()
     {
         if(checkColWin() || checkRowWin() || checkDiagonalWin()) {
