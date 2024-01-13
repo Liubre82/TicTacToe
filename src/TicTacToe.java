@@ -115,7 +115,10 @@ public class TicTacToe
     boolean checkColWin()
     {
         for(int col = 0; col < 3; col++) {
-            if(board[0][col] == board[1][col] && board[1][col] == board[2][col]) return true;
+            if(board[0][col] != ' ' &&
+               board[0][col] == board[1][col] &&
+               board[1][col] == board[2][col])
+            { return true; }
         }
         return false;
     }
@@ -124,7 +127,10 @@ public class TicTacToe
     boolean checkRowWin()
     {
         for(int row = 0; row < 3; row++) {
-            if(board[row][0] == board[row][1] && board[row][1] == board[row][2]) return true;
+            if(board[row][0] != ' ' &&
+               board[row][0] == board[row][1] &&
+               board[row][1] == board[row][2])
+            { return true; }
         }
         return false;
     }
@@ -132,8 +138,8 @@ public class TicTacToe
     //checks for only the boards diagonal winning conditions.
     boolean checkDiagonalWin()
     {
-        if(board[0][0] == board[1][1] && board[1][1] == board[2][2]) return true;
-        else if(board[0][2] == board[1][1] && board[1][1] == board[2][0]) return true;
+        if(board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) return true;
+        else if(board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) return true;
         return false;
     }
 
