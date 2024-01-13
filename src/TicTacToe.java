@@ -1,10 +1,12 @@
+import java.util.Scanner;
+
 public class TicTacToe
 {
-
+    //2d array is [row][col]
     char[][] board;
     private final char[][] boardPosition = {{'1', '2', '3'},
-                                  {'4', '5', '6'},
-                                  {'7', '8', '9'}};
+                                            {'4', '5', '6'},
+                                            {'7', '8', '9'}};
 
 
     /*initialize our board 2d array then invoke the initBoard method that sets a
@@ -35,7 +37,8 @@ public class TicTacToe
 
     //Displays our fancy looking tic-tac-toe board in the terminal.
     void displayBoard()
-    {   System.out.println("--GameBoard--     ---PosBoard--");
+    {
+        System.out.println("--GameBoard--     --Positions--");
         System.out.println("-------------     -------------");
         for(int row = 0; row < board.length; row++) {
             for(int col = 0; col < board[row].length; col++) {
@@ -108,15 +111,74 @@ public class TicTacToe
         }
     }
 
+    //checks for only the boards Column winning conditions.
+    boolean checkColWin()
+    {
+        for(int col = 0; col < 3; col++) {
+            if(board[0][col] == board[1][col] && board[1][col] == board[2][col]) return true;
+        }
+        return false;
+    }
+
+    //checks for only the boards Row winning conditions.
+    boolean checkRowWin()
+    {
+        for(int row = 0; row < 3; row++) {
+            if(board[row][0] == board[row][1] && board[row][1] == board[row][2]) return true;
+        }
+        return false;
+    }
+
+    //checks for only the boards diagonal winning conditions.
+    boolean checkDiagonalWin()
+    {
+        if(board[0][0] == board[1][1] && board[1][1] == board[2][2]) return true;
+        else if(board[0][2] == board[1][1] && board[1][1] == board[2][0]) return true;
+        return false;
+    }
+
+    //checks each possible winning condition and if any of them are true, return true.
+    boolean checkWin()
+    {
+        if(checkColWin() || checkRowWin() || checkDiagonalWin()) {
+            return true;
+        }
+        return false;
+    }
 
     public static void main(String[] args)
     {
+
+        boolean gameFinish = false;
         TicTacToe board = new TicTacToe();
         board.displayBoard();
         board.placeMark(1, 'X');
         board.displayBoard();
-        board.placeMark(1, 'X');
+        board.placeMark(2, 'X');
         board.displayBoard();
+        board.placeMark(3, 'X');
+        board.displayBoard();
+        board.placeMark(4, 'X');
+        board.placeMark(7, 'X');
+        board.displayBoard();
+
+
+        System.out.println(board.checkWin());
+
+        while(gameFinish) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter a position: ");
+            try {
+                int pos = sc.nextInt();
+            } catch(Exception e) {
+                System.out.println("Not a valid type.");
+            }
+        }
+
+
+
+
+
 //        char[][] board = {{' ', ' ', ' '},
 //                          {' ', ' ', ' '},
 //                          {' ', ' ', ' '}};
