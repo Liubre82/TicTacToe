@@ -11,7 +11,7 @@ public abstract class Player {
 
     abstract void makeMove();
 
-    abstract void isValidMove();
+    abstract boolean isValidMove(int pos);
 
     public char getMark() {
         return mark;

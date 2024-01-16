@@ -10,7 +10,7 @@ public class AIPlayer extends Player{
     }
 
     @Override
-    public void isValidMove() {
-
+    public boolean isValidMove(int pos) {
+        return false;
     }
 }

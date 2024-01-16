@@ -1,10 +1,11 @@
+import java.util.Map;
 import java.util.Scanner;
 
 public class TicTacToe
 {
     //2d array is [row][col]
-    char[][] board;
-    private final char[][] boardPosition = {{'1', '2', '3'},
+    static char[][] board;
+    private final static char[][] boardPosition = {{'1', '2', '3'},
                                             {'4', '5', '6'},
                                             {'7', '8', '9'}};
 
@@ -55,7 +56,10 @@ public class TicTacToe
         System.out.println("\n===============================\n");
     }
 
-    void placeMark(int pos, char mark)
+
+/*    convert pos to the 2d array keys row and col,
+      returns a hashMap with2 keys row and map.*/
+    static Map<String, Integer> convertPosition(int pos)
     {
         int row = 0, col = 0;
         switch(pos) {
@@ -97,6 +101,18 @@ public class TicTacToe
                 break;
 
         }
+        Map<String, Integer> position = Map.of(
+                "row", row,
+                "col", col
+        );
+        return position;
+    }
+
+    void placeMark(int pos, char mark)
+    {
+        int row = TicTacToe.convertPosition(pos).get("row");
+        int col = TicTacToe.convertPosition(pos).get("col");
+
         if(pos > 0 && pos < 10) {
             if(board[row][col] != ' ') {
                 System.out.println("Position has already been taken!!\n");
