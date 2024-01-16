@@ -11,6 +11,7 @@ public class HumanPlayer extends Player {
     {
         int pos;
         do {
+
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter a position 1-9: ");
             pos = sc.nextInt();
@@ -23,7 +24,7 @@ public class HumanPlayer extends Player {
         int row = TicTacToe.convertPosition(pos).get("row");
         int col = TicTacToe.convertPosition(pos).get("col");
         if(pos > 0 && pos < 10) {
-            if(TicTacToe.board[row][col] != ' ') return true;
+            if(TicTacToe.board[row][col] == ' ') return true;
         }
         return false;
     }
