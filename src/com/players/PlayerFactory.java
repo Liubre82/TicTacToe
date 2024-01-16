@@ -1,3 +1,5 @@
+package com.players;
+
 public class PlayerFactory {
 
     private Player player;

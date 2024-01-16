@@ -1,3 +1,6 @@
+package com.players;
+import com.tictactoeboard.TicTacToe;
+
 public abstract class Player
 {
 
@@ -11,7 +14,7 @@ public abstract class Player
         this.name = name;
     }
 
-    abstract void makeMove();
+    public abstract void makeMove();
 
     //checks if the position to place the mark is valid, returns a boolean based on that result.
     public boolean isValidMove(int pos)
@@ -19,7 +22,7 @@ public abstract class Player
         int row = TicTacToe.convertPosition(pos).get("row");
         int col = TicTacToe.convertPosition(pos).get("col");
         if(pos > 0 && pos < 10) {
-            if(TicTacToe.board[row][col] == ' ') return true;
+            if(TicTacToe.getBoard()[row][col] == ' ') return true;
         }
         return false;
     }

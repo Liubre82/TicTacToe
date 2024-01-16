@@ -1,3 +1,7 @@
+package com.players;
+
+import com.tictactoeboard.TicTacToe;
+
 import java.util.Scanner;
 
 public class HumanPlayer extends Player

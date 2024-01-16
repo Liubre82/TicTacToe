@@ -1,9 +1,11 @@
+package com.tictactoeboard;
+
 import java.util.Map;
 
 public class TicTacToe
 {
     //2d array is [row][col]
-    static char[][] board;
+    private static char[][] board;
     private final static char[][] boardPosition = {{'1', '2', '3'},
                                             {'4', '5', '6'},
                                             {'7', '8', '9'}};
@@ -18,7 +20,7 @@ public class TicTacToe
     }
 
     //sets each
-    void initBoard()
+    public void initBoard()
     {
         //int pos = 1;
         for(int row = 0; row < board.length; row++) {
@@ -34,9 +36,12 @@ public class TicTacToe
         }
     }
 
+    public static char[][] getBoard() {
+        return board;
+    }
 
     //Displays our fancy looking tic-tac-toe board in the terminal.
-    void displayBoard()
+    public void displayBoard()
     {
         System.out.println("--GameBoard--     --Positions--");
         System.out.println("-------------     -------------");
@@ -58,7 +63,7 @@ public class TicTacToe
 
 /*  convert pos to the 2d array keys row and col,
     returns a hashMap with2 keys row and map.*/
-    static Map<String, Integer> convertPosition(int pos)
+    public static Map<String, Integer> convertPosition(int pos)
     {
         int row = 0, col = 0;
         switch(pos) {
@@ -108,7 +113,7 @@ public class TicTacToe
     }
 
     //places a mark onto the game board.
-    static void placeMark(int pos, char mark)
+    public static void placeMark(int pos, char mark)
     {
         int row = TicTacToe.convertPosition(pos).get("row");
         int col = TicTacToe.convertPosition(pos).get("col");
@@ -128,7 +133,7 @@ public class TicTacToe
     }
 
     //checks for only the boards Column winning conditions.
-    static boolean checkColWin()
+    public static boolean checkColWin()
     {
         for(int col = 0; col < 3; col++) {
             if(board[0][col] != ' ' &&
@@ -140,7 +145,7 @@ public class TicTacToe
     }
 
     //checks for only the boards Row winning conditions.
-    static boolean checkRowWin()
+    public static boolean checkRowWin()
     {
         for(int row = 0; row < 3; row++) {
             if(board[row][0] != ' ' &&
@@ -152,7 +157,7 @@ public class TicTacToe
     }
 
     //checks for only the boards diagonal winning conditions.
-    static boolean checkDiagonalWin()
+    public static boolean checkDiagonalWin()
     {
         if(board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) return true;
         else if(board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) return true;
@@ -162,7 +167,7 @@ public class TicTacToe
     //checks each possible winning condition and if any of them are true, return true.
     //each checkWin condition function checks if ' ' exist, if it does, it returns false. this
     //prevents empty spaces from 'winning' the game.
-    static boolean checkWin()
+    public static boolean checkWin()
     {
         if(checkColWin() || checkRowWin() || checkDiagonalWin()) {
             return true;

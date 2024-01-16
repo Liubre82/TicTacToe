@@ -1,3 +1,6 @@
+package com.players;
+import com.tictactoeboard.TicTacToe;
+
 public class AIPlayer extends Player
 {
 
