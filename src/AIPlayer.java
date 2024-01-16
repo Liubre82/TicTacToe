@@ -1,12 +1,7 @@
-public class AIPlayer implements Player{
-
-    private char mark;
-
-    private String name;
+public class AIPlayer extends Player{
 
     public AIPlayer(char mark, String name) {
-        this.mark = mark;
-        this.name = name;
+        super(mark, name);
     }
 
     @Override

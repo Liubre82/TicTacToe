@@ -1,12 +1,7 @@
-public class HumanPlayer implements Player {
-
-    private char mark;
-
-    private String name;
-
+public class HumanPlayer extends Player {
+    
     public HumanPlayer(char mark, String name) {
-        this.mark = mark;
-        this.name = name;
+        super(mark, name);
     }
 
     @Override
