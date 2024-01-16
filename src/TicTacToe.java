@@ -1,5 +1,4 @@
 import java.util.Map;
-import java.util.Scanner;
 
 public class TicTacToe
 {
@@ -57,8 +56,8 @@ public class TicTacToe
     }
 
 
-/*    convert pos to the 2d array keys row and col,
-      returns a hashMap with2 keys row and map.*/
+/*  convert pos to the 2d array keys row and col,
+    returns a hashMap with2 keys row and map.*/
     static Map<String, Integer> convertPosition(int pos)
     {
         int row = 0, col = 0;
@@ -108,6 +107,7 @@ public class TicTacToe
         return position;
     }
 
+    //places a mark onto the game board.
     static void placeMark(int pos, char mark)
     {
         int row = TicTacToe.convertPosition(pos).get("row");
@@ -170,73 +170,4 @@ public class TicTacToe
         return false;
     }
 
-    public static void main(String[] args)
-    {
-
-        boolean gameFinish = false;
-        TicTacToe board = new TicTacToe();
-        board.displayBoard();
-        board.placeMark(1, 'X');
-        board.displayBoard();
-        board.placeMark(2, 'X');
-        board.displayBoard();
-        board.placeMark(3, 'X');
-        board.displayBoard();
-        board.placeMark(4, 'X');
-        board.placeMark(7, 'X');
-        board.displayBoard();
-
-
-        System.out.println(board.checkWin());
-
-        while(gameFinish) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter a position: ");
-            try {
-                int pos = sc.nextInt();
-            } catch(Exception e) {
-                System.out.println("Not a valid type.");
-            }
-        }
-
-
-
-
-
-//        char[][] board = {{' ', ' ', ' '},
-//                          {' ', ' ', ' '},
-//                          {' ', ' ', ' '}};
-//
-//        char[][] boardPosition = {{'1', '2', '3'},
-//                                  {'4', '5', '6'},
-//                                  {'7', '8', '9'}};
-//
-//        printBoard(board, boardPosition);
-//
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Where would you like to play? ");
-//        String userInput = scanner.nextLine();
-//        System.out.println(userInput);
-//    }
-//
-//    //Printing out our board in the terminal.
-//    private static void printBoard(char[][] board, char[][] boardPosition) {
-//        System.out.print("Game Board" + "   " + "Board Position");
-//        System.out.println();
-//        System.out.print("  " + board[0][0] + "|" + board[0][1] + "|" + board[0][2] + "        ");
-//        System.out.print("  " + boardPosition[0][0] + "|" + boardPosition[0][1] + "|" + boardPosition[0][2]);
-//        System.out.println();
-//        System.out.print("  -+-+-" + "        ");
-//        System.out.print("  -+-+-");
-//        System.out.println();
-//        System.out.print("  " + board[1][0] + "|" + board[1][1] + "|" + board[1][2] + "        ");
-//        System.out.print("  " + boardPosition[1][0] + "|" + boardPosition[1][1] + "|" + boardPosition[1][2]);
-//        System.out.println();
-//        System.out.print("  -+-+-" + "        ");
-//        System.out.print("  -+-+-");
-//        System.out.println();
-//        System.out.print("  " + board[2][0] + "|" + board[2][1] + "|" + board[2][2] + "        ");
-//        System.out.print("  " + boardPosition[2][0] + "|" + boardPosition[2][1] + "|" + boardPosition[2][2]);
-//        System.out.println();
-    }
 }

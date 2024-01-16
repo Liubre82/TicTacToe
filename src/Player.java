@@ -1,23 +1,35 @@
-public abstract class Player {
+public abstract class Player
+{
 
     private char mark;
 
     private String name;
 
-    public Player(char mark, String name) {
+    public Player(char mark, String name)
+    {
         this.mark = mark;
         this.name = name;
     }
 
     abstract void makeMove();
 
-    abstract boolean isValidMove(int pos);
-
-    public char getMark() {
+    //checks if the position to place the mark is valid, returns a boolean based on that result.
+    public boolean isValidMove(int pos)
+    {
+        int row = TicTacToe.convertPosition(pos).get("row");
+        int col = TicTacToe.convertPosition(pos).get("col");
+        if(pos > 0 && pos < 10) {
+            if(TicTacToe.board[row][col] == ' ') return true;
+        }
+        return false;
+    }
+    public char getMark()
+    {
         return mark;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 }
