@@ -26,6 +26,7 @@ public abstract class Player
         }
         return false;
     }
+
     public char getMark()
     {
         return mark;

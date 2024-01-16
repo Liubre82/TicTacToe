@@ -43,6 +43,7 @@ public class TicTacToe
     //Displays our fancy looking tic-tac-toe board in the terminal.
     public void displayBoard()
     {
+        System.out.println();
         System.out.println("--GameBoard--     --Positions--");
         System.out.println("-------------     -------------");
         for(int row = 0; row < board.length; row++) {

@@ -9,6 +9,7 @@ public class AIPlayer extends Player
         super(mark, name);
     }
 
+    //program randomly selects a valid spot on the board to place its mark.
     @Override
     public void makeMove() {
         int randomPos;
