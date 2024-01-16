@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class HumanPlayer extends Player {
     
     public HumanPlayer(char mark, String name) {
@@ -5,8 +7,15 @@ public class HumanPlayer extends Player {
     }
 
     @Override
-    public void makeMove() {
-
+    public void makeMove()
+    {
+        int pos;
+        do {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter a position 1-9: ");
+            pos = sc.nextInt();
+        } while (!isValidMove(pos));
+        TicTacToe.placeMark(pos, this.getMark());
     }
 
     @Override

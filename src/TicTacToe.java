@@ -108,7 +108,7 @@ public class TicTacToe
         return position;
     }
 
-    void placeMark(int pos, char mark)
+    static void placeMark(int pos, char mark)
     {
         int row = TicTacToe.convertPosition(pos).get("row");
         int col = TicTacToe.convertPosition(pos).get("col");
@@ -128,7 +128,7 @@ public class TicTacToe
     }
 
     //checks for only the boards Column winning conditions.
-    boolean checkColWin()
+    static boolean checkColWin()
     {
         for(int col = 0; col < 3; col++) {
             if(board[0][col] != ' ' &&
@@ -140,7 +140,7 @@ public class TicTacToe
     }
 
     //checks for only the boards Row winning conditions.
-    boolean checkRowWin()
+    static boolean checkRowWin()
     {
         for(int row = 0; row < 3; row++) {
             if(board[row][0] != ' ' &&
@@ -152,7 +152,7 @@ public class TicTacToe
     }
 
     //checks for only the boards diagonal winning conditions.
-    boolean checkDiagonalWin()
+    static boolean checkDiagonalWin()
     {
         if(board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) return true;
         else if(board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) return true;
@@ -162,7 +162,7 @@ public class TicTacToe
     //checks each possible winning condition and if any of them are true, return true.
     //each checkWin condition function checks if ' ' exist, if it does, it returns false. this
     //prevents empty spaces from 'winning' the game.
-    boolean checkWin()
+    static boolean checkWin()
     {
         if(checkColWin() || checkRowWin() || checkDiagonalWin()) {
             return true;
