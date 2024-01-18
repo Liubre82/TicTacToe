@@ -13,4 +13,5 @@ inside the launchgame package.
 Sample of the game in the terminal:
 
 
-![image](https://github.com/Liubre82/TicTacToe/assets/99841795/1ae18b1b-1a94-451a-91d6-f5f38bce190e)
+![image](https://github.com/Liubre82/TicTacToe/assets/99841795/d2e5f200-9ac2-4450-9c87-3da09bbaa9c4)
+
