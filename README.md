@@ -11,4 +11,6 @@ To run the program, just run it through the LaunchGame.java file
 inside the launchgame package.
 
 Sample of the game in the terminal:
+
+
 ![image](https://github.com/Liubre82/TicTacToe/assets/99841795/1ae18b1b-1a94-451a-91d6-f5f38bce190e)
