@@ -19,7 +19,7 @@ public class TicTacToe
         initBoard();
     }
 
-    //sets each
+    //sets each block to an empty char.
     public void initBoard()
     {
         //int pos = 1;
